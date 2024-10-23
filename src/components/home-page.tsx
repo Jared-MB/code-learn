@@ -7,6 +7,7 @@ import { BookOpen, Code, Database, Globe, Search, Server, User } from "lucide-re
 import Image from "next/image"
 import Link from "next/link"
 import { redirect } from "next/navigation"
+import Github from "./svg/github"
 
 const navigate = async (payload: FormData) => {
   "use server"
@@ -22,13 +23,18 @@ export function HomePage() {
           <Code className="h-6 w-6" />
           <span className="ml-2 text-lg font-bold">CodeLearn</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <nav className="ml-auto flex items-center gap-4 sm:gap-6">
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="/cursos">
             Cursos
           </Link>
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="/perfil">
             Mi Cuenta
           </Link>
+          {/* <Button size='icon' variant='outline'> */}
+          <Link title='Repositorio' target='_blank' href='https://github.com/Jared-MB/code-learn'>
+            <Github className='fill-black'/>
+          </Link>
+          {/* </Button> */}
         </nav>
       </header>
       <main className="flex-1">
